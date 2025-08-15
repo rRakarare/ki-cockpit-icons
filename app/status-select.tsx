@@ -13,7 +13,7 @@ function StatusSelect() {
           key={statusValue || "null"}
           onClick={() => setStatus(statusValue)}
           variant={"outline"}
-          className={status === statusValue && "bg-accent"}
+          className={status === statusValue ? "bg-accent" : ""}
         >
           {statusValue || "Clear"}
         </Button>

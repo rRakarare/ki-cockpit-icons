@@ -14,7 +14,7 @@ function TextSelect() {
           key={val || "null"}
           onClick={() => setTextType(val)}
           variant={"outline"}
-          className={textType === val && "bg-accent"}
+          className={textType === val ? "bg-accent" : ""}
         >
           {val || "Clear"}
         </Button>
