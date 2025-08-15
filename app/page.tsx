@@ -1,6 +1,5 @@
 "use client";
 
-import MessageGenDemo from "./message-gen-demo";
 import StatusSelect from "./status-select";
 import { MessageGenerationStatus } from "./message-generation-status";
 import TextSelect from "./text-select";
