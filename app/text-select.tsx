@@ -1,9 +1,11 @@
 import React from "react";
-import { textTypeOptions, useStatusActions } from "./store";
+import { textTypeOptions, useStatusActions, useStatusState } from "./store";
 import { Button } from "@/components/ui/button";
 
 function TextSelect() {
   const { setTextType } = useStatusActions();
+
+  const { textType } = useStatusState();
 
   return (
     <div className="flex gap-2">
@@ -12,7 +14,7 @@ function TextSelect() {
           key={val || "null"}
           onClick={() => setTextType(val)}
           variant={"outline"}
-          className=""
+          className={textType === val && "bg-accent"}
         >
           {val || "Clear"}
         </Button>

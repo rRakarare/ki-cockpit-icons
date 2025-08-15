@@ -1,9 +1,10 @@
 import React from "react";
-import { statusOptions, useStatusActions } from "./store";
+import { statusOptions, useStatusActions, useStatusState } from "./store";
 import { Button } from "@/components/ui/button";
 
 function StatusSelect() {
   const { setStatus } = useStatusActions();
+  const { status } = useStatusState();
 
   return (
     <div className="flex gap-2">
@@ -12,7 +13,7 @@ function StatusSelect() {
           key={statusValue || "null"}
           onClick={() => setStatus(statusValue)}
           variant={"outline"}
-          className=""
+          className={status === statusValue && "bg-accent"}
         >
           {statusValue || "Clear"}
         </Button>
