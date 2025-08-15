@@ -13,7 +13,7 @@ import { Kanban } from "@/components/animate-ui/icons/kanban";
 export function MessageGenerationStatus() {
   const { status } = useStatusState();
 
-  const iconClassName = "size-6";
+  const iconClassName = "size-6 stroke-[2px] stroke-[#3A3A3A]";
 
   switch (status) {
     case "generatingDalleImage":
@@ -36,6 +36,7 @@ export function MessageGenerationStatus() {
             className={iconClassName}
             animate
             animation="default"
+            loopDelay={1}
             loop
           />
           <TextTyper text="Browsing the web" />
@@ -87,7 +88,10 @@ const TextTyper = ({ text }: { text: string }) => {
   switch (textType) {
     case "shimmer":
       return (
-        <TextShimmer className="font-mono text-sm leading-loose" duration={1}>
+        <TextShimmer
+          className="font-semibold text-sm font-mono leading-7"
+          duration={1}
+        >
           {text}
         </TextShimmer>
       );
@@ -95,20 +99,22 @@ const TextTyper = ({ text }: { text: string }) => {
     case "hCursor":
       return (
         <TypingText
-          className="font-semibold"
+          className="font-semibold text-sm font-mono leading-7"
           text={text}
-          duration={20}
+          duration={40}
           cursor
+          cursorClassName="w-[9px] h-1 mb-[1px] ml-[1px]"
         />
       );
       break;
     case "vCursor":
       return (
         <TypingText
-          className="font-semibold"
+          className="font-semibold text-sm font-mono leading-7"
           text={text}
-          duration={20}
+          duration={40}
           cursor
+          cursorClassName="w-[2px] h-4 mb-[1px] ml-[1px]"
         />
       );
       break;

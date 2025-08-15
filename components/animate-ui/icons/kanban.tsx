@@ -61,7 +61,7 @@ function IconComponent({ size, ...props }: KanbanProps) {
       strokeLinejoin="round"
       {...props}
     >
-      <g className="-rotate-90 origin-center">
+      <g className="-rotate-90 translate-y-[2px] origin-center">
         <motion.line
           x1={18}
           y1={5}

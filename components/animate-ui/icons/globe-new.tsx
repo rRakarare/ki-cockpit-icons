@@ -15,58 +15,51 @@ type GlobeNewProps = IconProps<keyof typeof animations>;
 const animations = {
   default: {
     // Outer circle - subtle scale animation
-    path1: {
-      initial: {
-        scale: 1,
-      },
-      animate: {
-        scale: 1.05,
-        transition: {
-          duration: 0.3,
-          ease: "easeInOut",
-        },
-      },
-    },
+    path1: {},
     // Horizontal line - slide in from sides
     path2: {},
     // Left meridian - multiple path morphs: curved → straight → wavy
     path3: {
       initial: {
-        d: "M12.0001 1.99973C12.0001 1.99973 8 3 8 11.9997C8 20.9995 12.0001 21.9997 12.0001 21.9997",
+        d: "M12 22C6.47714 22 2 17.5228 2 12C2 6.47715 6.47714 2 12 2",
+        opacity: 0,
       },
       animate: {
-        d: [
-          "M12.0001 1.99973C12.0001 1.99973 8 3 8 11.9997C8 20.9995 12.0001 21.9997 12.0001 21.9997",
-          "M12.0001 1.99973C12.0001 1.99973 22 3 22 11.9997C22 20.9995 12.0001 21.9997 12.0001 21.9997",
-          "M12.0001 1.99973C12.0001 1.99973 2 3 2 11.9997C2 20.9995 12.0001 21.9997 12.0001 21.9997",
-          "M12.0001 1.99973C12.0001 1.99973 8 3 8 11.9997C8 20.9995 12.0001 21.9997 12.0001 21.9997",
-        ],
+        d: "M12 22C12 22 7.5 17.5228 7.5 12C7.5 6.47715 12 2 12 2",
+        opacity: 1,
         transition: {
           duration: 0.9,
-          ease: "linear",
-          times: [0, 0.3, 0.8, 1], // Control timing of each morph
+          ease: "easeInOut",
+        },
+      },
+    },
+    path4: {
+      initial: {
+        d: "M12 22C12 22 7.5 17.5228 7.5 12C7.5 6.47715 12 2 12 2",
+      },
+      animate: {
+        d: "M12 22C12 22 16.5 17.5228 16.5 12C16.5 6.47715 12 2 12 2",
+        transition: {
+          duration: 0.9,
+          ease: "easeInOut",
+        },
+      },
+    },
+    path5: {
+      initial: {
+        d: "M12 22C12 22 16.5 17.5228 16.5 12C16.5 6.47715 12 2 12 2",
+        opacity: 1,
+      },
+      animate: {
+        d: "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2",
+        opacity: 0,
+        transition: {
+          duration: 0.9,
+          ease: "easeInOut",
         },
       },
     },
     // Right meridian - multiple path morphs: curved → straight → wavy (opposite)
-    path4: {
-      initial: {
-        d: "M12 1.99973C12 1.99973 16 3.00027 16 12C16 20.9997 12 21.9997 12 21.9997",
-      },
-      animate: {
-        d: [
-          "M12 1.99973C12 1.99973 16 3.00027 16 12C16 20.9997 12 21.9997 12 21.9997",
-          "M12 1.99973C12 1.99973 22 3.00027 22 12C22 20.9997 12 21.9997 12 21.9997",
-          "M12 2C12 2 2 3.00055 2 12.0003C2 21 12 22 12 22",
-          "M12 1.99973C12 1.99973 16 3.00027 16 12C16 20.9997 12 21.9997 12 21.9997",
-        ],
-        transition: {
-          duration: 0.9,
-          ease: "linear",
-          times: [0, 0.1, 0.4, 1], // Control timing of each morph
-        },
-      },
-    },
   } satisfies Record<string, Variants>,
   "default-loop": {
     // Outer circle - breathing effect
@@ -162,7 +155,7 @@ function IconComponent({ size, ...props }: GlobeNewProps) {
         animate={controls}
       />
       <motion.path
-        d="M2 12H22"
+        d="M2.5 12H21.5"
         variants={variants.path2}
         initial="initial"
         animate={controls}
@@ -174,6 +167,11 @@ function IconComponent({ size, ...props }: GlobeNewProps) {
       />
       <motion.path
         variants={variants.path4}
+        initial="initial"
+        animate={controls}
+      />
+      <motion.path
+        variants={variants.path5}
         initial="initial"
         animate={controls}
       />

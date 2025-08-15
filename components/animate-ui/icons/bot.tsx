@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { motion, type Variants } from 'motion/react';
+import * as React from "react";
+import { motion, type Variants } from "motion/react";
 
 import {
   getVariants,
   useAnimateIconContext,
   IconWrapper,
   type IconProps,
-} from '@/components/animate-ui/icons/icon';
+} from "@/components/animate-ui/icons/icon";
 
 type BotProps = IconProps<keyof typeof animations>;
 
@@ -27,7 +27,7 @@ const animations = {
         x: [0, -1.5, 1.5, 0],
         y: [0, 1.5, 1.5, 0],
         transition: {
-          ease: 'easeInOut',
+          ease: "easeInOut",
           duration: 1.3,
         },
       },
@@ -41,14 +41,25 @@ const animations = {
         x: [0, -1.5, 1.5, 0],
         y: [0, 1.5, 1.5, 0],
         transition: {
-          ease: 'easeInOut',
+          ease: "easeInOut",
           duration: 1.3,
         },
       },
     },
   } satisfies Record<string, Variants>,
   blink: {
-    path1: {},
+    path1: {
+      initial: {
+        d: "M12 8V4H19",
+      },
+      animate: {
+        d: ["M12 8V4H19", "M12 8V4H5", "M12 8V4H19"],
+        transition: {
+          ease: "easeInOut",
+          duration: 0.6,
+        },
+      },
+    },
     rect: {},
     path2: {},
     path3: {},
@@ -59,7 +70,7 @@ const animations = {
       animate: {
         scaleY: [1, 0.5, 1],
         transition: {
-          ease: 'easeInOut',
+          ease: "easeInOut",
           duration: 0.6,
         },
       },
@@ -71,7 +82,7 @@ const animations = {
       animate: {
         scaleY: [1, 0.5, 1],
         transition: {
-          ease: 'easeInOut',
+          ease: "easeInOut",
           duration: 0.6,
         },
       },
@@ -89,7 +100,7 @@ const animations = {
       animate: {
         scaleY: [1, 0.5, 1],
         transition: {
-          ease: 'easeInOut',
+          ease: "easeInOut",
           duration: 0.6,
         },
       },
