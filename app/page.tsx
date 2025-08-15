@@ -1,6 +1,5 @@
 "use client";
 
-import { Layers } from "@/components/animate-ui/icons/layers";
 import MessageGenDemo from "./message-gen-demo";
 import StatusSelect from "./status-select";
 import { MessageGenerationStatus } from "./message-generation-status";
