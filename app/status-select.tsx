@@ -7,7 +7,7 @@ function StatusSelect() {
   const { status } = useStatusState();
 
   return (
-    <div className="flex gap-2">
+    <div className="flex flex-wrap gap-2">
       {statusOptions.map((statusValue) => (
         <Button
           key={statusValue || "null"}

@@ -9,6 +9,7 @@ import { Bot } from "@/components/animate-ui/icons/bot";
 import { Globe } from "@/components/animate-ui/icons/globe";
 import { GlobeNew } from "@/components/animate-ui/icons/globe-new";
 import { Kanban } from "@/components/animate-ui/icons/kanban";
+import { Eye } from "@/components/animate-ui/icons/eye";
 
 export function MessageGenerationStatus() {
   const { status } = useStatusState();
@@ -43,7 +44,18 @@ export function MessageGenerationStatus() {
         </div>
       );
     case "analyzingImages":
-      return "analyzingImages";
+      return (
+        <div className="flex items-center gap-2">
+          <Eye
+            className={iconClassName}
+            animate
+            animation="default"
+            loop
+            loopDelay={1}
+          />
+          <TextTyper text="Analyzing image" />
+        </div>
+      );
     case "callingQdrant":
       return (
         <div className="flex items-center gap-2">
