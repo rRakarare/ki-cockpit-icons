@@ -103,7 +103,7 @@ const animations = {
         ],
         transition: {
           duration: 1.2,
-          ease: "easeInOut",
+          ease: "linear",
           times: [0, 0.25, 0.5, 0.75, 1], // Even timing for 5 stages
         },
       },
@@ -123,7 +123,7 @@ const animations = {
         ],
         transition: {
           duration: 1.2,
-          ease: "easeInOut",
+          ease: "linear",
           times: [0, 0.25, 0.5, 0.75, 1], // Even timing for 5 stages
         },
       },

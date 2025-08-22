@@ -10,6 +10,7 @@ import { Globe } from "@/components/animate-ui/icons/globe";
 import { GlobeNew } from "@/components/animate-ui/icons/globe-new";
 import { Kanban } from "@/components/animate-ui/icons/kanban";
 import { Eye } from "@/components/animate-ui/icons/eye";
+import { Scroll } from "@/components/animate-ui/icons/scroll";
 
 export function MessageGenerationStatus() {
   const { status } = useStatusState();
@@ -85,7 +86,13 @@ export function MessageGenerationStatus() {
     case "analyzingDocuments":
       return (
         <div className="flex gap-2">
-          <Kanban className={iconClassName} animate animation="default" loop />
+          <Scroll
+            className={iconClassName}
+            animate
+            animation="default"
+            loop
+            loopDelay={1}
+          />
           <TextTyper text="Analyzing Document" />
         </div>
       );
