@@ -11,6 +11,7 @@ import { GlobeNew } from "@/components/animate-ui/icons/globe-new";
 import { Kanban } from "@/components/animate-ui/icons/kanban";
 import { Eye } from "@/components/animate-ui/icons/eye";
 import { Scroll } from "@/components/animate-ui/icons/scroll";
+import { Bulb } from "@/components/animate-ui/icons/bulb";
 
 export function MessageGenerationStatus() {
   const { status } = useStatusState();
@@ -94,6 +95,19 @@ export function MessageGenerationStatus() {
             loopDelay={1}
           />
           <TextTyper text="Analyzing Document" />
+        </div>
+      );
+    case "thinking":
+      return (
+        <div className="flex gap-2">
+          <Bulb
+            className={iconClassName}
+            animate
+            animation="default"
+            loop
+            loopDelay={1}
+          />
+          <TextTyper text="Thinking" />
         </div>
       );
     default:

@@ -8,6 +8,7 @@ export const statusOptions = [
   "callingQdrant",
   "callingAssistant",
   "analyzingDocuments",
+  "thinking",
   null,
 ] as const;
 export const textTypeOptions = ["shimmer", "vCursor", "hCursor"] as const;
